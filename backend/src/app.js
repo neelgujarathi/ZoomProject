@@ -20,6 +20,10 @@ app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 
 app.use("/api/v1/users", userRoutes);
+app.get("/", (req, res) => {
+  res.send("✅ Zoom Backend is running successfully!");
+});
+
 
 const start = async () => {
     app.set("mongo_user")
